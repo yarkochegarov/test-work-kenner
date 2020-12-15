@@ -48,13 +48,4 @@ class FactoryRobot
 
         throw new BadMethodCallException('Call to undefined method');
     }
-
-    /**
-     * for test
-     * @todo delete
-     */
-    public function showResult()
-    {
-        var_dump($this->types);
-    }
 }

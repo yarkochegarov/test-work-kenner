@@ -6,8 +6,8 @@ class Robot1 extends Robot
 {
     public function __construct()
     {
-        $this->weight = 10;
-        $this->speed = 10;
-        $this->height = 10;
+        $this->weight = 10.1;
+        $this->speed = 10.1;
+        $this->height = 10.1;
     }
 }

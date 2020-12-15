@@ -11,5 +11,9 @@ $factory->addType(new Robot2());
 $mergerRobot = new MergeRobot();
 $mergerRobot->addRobot(new Robot1());
 $mergerRobot->addRobot($factory->createRobot1(2));
-$mergerRobot->checkResult();
+$factory->addType($mergerRobot);
+$exemplar = $factory->createMergeRobot(1);
+$res = reset($exemplar);
+echo $res->getSpeed()."<br>";
+echo $res->getWeight();
 

@@ -24,11 +24,35 @@ class MergeRobot extends Robot
     }
 
     /**
-     * for test
-     * @todo delete
+     * @return double
      */
-    public function showResult()
+    public function getHeight()
     {
-        var_dump($this->robots);
+        return array_reduce($this->robots, function ($carry, $item){
+            $carry += $item->getHeight();
+            return $carry;
+        });
+    }
+
+    /**
+     * @return double
+     */
+    public function getSpeed()
+    {
+        return array_reduce($this->robots, function($lowest, $company) {
+            return $lowest === null || $company->getSpeed() < $lowest->getSpeed() ?
+                $company : $lowest;
+        })->getSpeed();
+    }
+
+    /**
+     * @return double
+     */
+    public function getWeight()
+    {
+        return array_reduce($this->robots, function ($carry, $item){
+            $carry += $item->getWeight();
+            return $carry;
+        });
     }
 }

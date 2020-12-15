@@ -2,20 +2,42 @@
 
 abstract class Robot
 {
-    protected $weight;
-    protected $speed;
     protected $height;
+    protected $speed;
+    protected $weight;
 
     /**
-     * @return mixed
+     * @param $height
+     * @return Robot
      */
-    public function getWeight()
+    public function setHeight($height): self
     {
-        return $this->weight;
+        $this->height = $height;
+
+        return $this;
     }
 
     /**
-     * @return mixed
+     * @return double|int
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param $speed
+     * @return Robot
+     */
+    public function setSpeed($speed): self
+    {
+        $this->speed = $speed;
+
+        return $this;
+    }
+
+    /**
+     * @return double|int
      */
     public function getSpeed()
     {
@@ -23,10 +45,21 @@ abstract class Robot
     }
 
     /**
-     * @return mixed
+     * @param $weight
+     * @return Robot
      */
-    public function getHeight()
+    public function setWeight($weight): self
     {
-        return $this->height;
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * @return double|int
+     */
+    public function getWeight()
+    {
+        return $this->weight;
     }
 }
